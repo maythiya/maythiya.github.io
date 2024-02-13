@@ -1,6 +1,6 @@
 # สมุดบันทึก
 
-สำหรับวิชา [OOP](https://maythiya.github.io)
+สำหรับวิชา [OOP](้https://maythiya.github.io)
 
 ![download banner](./banner.jpg)
 
