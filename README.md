@@ -1,10 +1,12 @@
-# สมุดบันทึก
-
-สำหรับวิชา [OOP](https://maythiya.github.io)
-
 ![download banner](./banner.jpg)
 
+# สมุดบันทึก
+
+สำหรับวิชา [OOP](https://github.com/maythiya.github.io)
+
 เมย์ธิญา แกมนิล
+
+## Code
 
 ```
 git status
