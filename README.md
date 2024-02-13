@@ -2,7 +2,7 @@
 
 # สมุดบันทึก
 
-สำหรับวิชา [OOP](https://github.com/maythiya.github.io)
+สำหรับวิชา [OOP](https://maythiya.github.io)
 
 เมย์ธิญา แกมนิล
 
