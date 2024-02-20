@@ -1,4 +1,4 @@
-![download banner](./npc.jpg)
+![download banner](./karina.png)
 
 # สมุดบันทึก
 
