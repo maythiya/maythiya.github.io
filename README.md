@@ -1,10 +1,8 @@
 ![download banner](./karina.png)
 
-# สมุดบันทึก
+# Note
 
-สำหรับวิชา [OOP](https://maythiya.github.io)
-
-เมย์ธิญา แกมนิล
+For [OOP](https://maythiya.github.io) subject
 
 ## Code
 
