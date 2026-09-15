@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>maythiya — Portfolio</title>
+  <title>เมย์ธิญา แกมนิล — Portfolio</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23050713'/%3E%3Ccircle cx='32' cy='32' r='10' fill='none' stroke='%2386e8ff' stroke-width='3'/%3E%3Cellipse cx='32' cy='32' rx='25' ry='9' fill='none' stroke='%23b7a0ff' stroke-width='3' transform='rotate(-24 32 32)'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,6 +34,7 @@
     .intro { max-width:490px; color:var(--muted); font-size:1.03rem; line-height:1.85; }
     .actions { display:flex; gap:14px; margin-top:34px; }
     .button { padding:13px 20px; font-size:.8rem; font-weight:700; display:inline-flex; align-items:center; gap:10px; border:1px solid var(--line); border-radius:999px; transition:.25s; }
+    button.button { font-family:inherit; cursor:pointer; }
     .button.primary { background:var(--ink); color:#080a16; border-color:var(--ink); }
     .button:hover { transform:translateY(-3px); border-color:var(--cyan); box-shadow:0 12px 32px rgba(34,210,255,.12); }
     .button svg, .icon svg { width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
@@ -57,6 +58,7 @@
     .project:hover { transform:translateY(-7px); border-color:rgba(134,232,255,.55); }
     .project::before { content:""; position:absolute; width:220px; height:220px; border-radius:50%; border:1px solid rgba(255,255,255,.16); top:-105px; right:-75px; }
     .project:nth-child(2)::before { border-color:rgba(183,160,255,.35); box-shadow:0 0 90px rgba(132,77,255,.16); }
+    .project:nth-child(3)::before { width:180px; height:180px; top:-85px; right:-65px; border-color:rgba(255,198,117,.35); box-shadow:0 0 80px rgba(231,137,54,.13); }
     .number { position:absolute; top:24px; left:27px; font:.68rem "DM Mono",monospace; color:var(--muted); }
     .project h3 { font-size:1.35rem; margin:0 0 8px; letter-spacing:-.035em; }
     .project p { font-size:.83rem; color:var(--muted); line-height:1.7; margin:0 0 18px; }
@@ -73,10 +75,12 @@
     .work-visual.has-image { display:block; background:#0a0c17; }
     .work-visual.has-image::before, .work-visual.has-image::after { display:none; }
     .work-visual.has-image img { width:100%; height:100%; min-height:520px; display:block; object-fit:cover; object-position:center; opacity:.88; filter:saturate(.72) contrast(1.04); }
+    .work-visual.has-image img, .screen-card img { cursor:zoom-in; }
     .work-visual.has-image .image-caption { position:absolute; left:20px; bottom:20px; z-index:1; padding:8px 12px; border-radius:999px; border:1px solid rgba(255,255,255,.22); background:rgba(5,7,19,.68); backdrop-filter:blur(10px); color:#e9edff; font:.62rem "DM Mono",monospace; letter-spacing:.1em; }
     .screen-gallery { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:65px; }
     .screen-card { margin:0; padding:12px; border:1px solid var(--line); border-radius:24px; background:rgba(255,255,255,.035); }
     .screen-card img { width:100%; aspect-ratio:9 / 16; object-fit:cover; object-position:top; display:block; border-radius:15px; background:#0a0c17; border:1px solid rgba(255,255,255,.08); }
+    .screen-card.landscape img { aspect-ratio:16 / 9; }
     .screen-card figcaption { padding:17px 5px 6px; }
     .screen-index { color:var(--cyan); font:.64rem "DM Mono",monospace; letter-spacing:.14em; }
     .screen-card h3 { font-size:1rem; letter-spacing:-.025em; margin:7px 0; }
@@ -90,6 +94,7 @@
     .case-meta { margin:30px 0; border-top:1px solid var(--line); }
     .case-meta div { display:flex; justify-content:space-between; gap:18px; padding:12px 0; border-bottom:1px solid var(--line); font-size:.77rem; }
     .case-meta span:last-child { color:var(--muted); font-family:"DM Mono",monospace; text-align:right; }
+    .case-actions { display:flex; flex-wrap:wrap; gap:10px; }
     .about { display:grid; grid-template-columns:1fr 1fr; gap:70px; }
     .about-text { font-size:1.25rem; line-height:1.75; letter-spacing:-.02em; color:#d5daeb; }
     .systems { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:28px; }
@@ -98,8 +103,16 @@
     .contact { padding:110px 0 80px; text-align:center; }
     .contact h2 { font-size:clamp(2.2rem,5vw,4.2rem); }
     .contact p { color:var(--muted); margin:18px auto 28px; max-width:450px; line-height:1.8; font-size:.9rem; }
+    .contact-links { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin:30px auto 0; }
+    .copy-feedback { min-height:1.4em; margin:13px 0 0; color:var(--cyan); font:.68rem "DM Mono",monospace; letter-spacing:.04em; }
     footer { border-top:1px solid var(--line); padding:22px 0; display:flex; justify-content:space-between; color:var(--muted); font:.65rem "DM Mono",monospace; }
-    @media (max-width:760px) { .links { gap:2px; } .links a { padding:7px 9px; } .links a:nth-child(2) { display:none; } .hero { grid-template-columns:1fr; min-height:660px; padding-top:60px; } .radar { display:none; } .projects,.case-grid,.screen-gallery { grid-template-columns:1fr; } .project { min-height:270px; } .case-grid.reverse .work-visual { order:0; } .work-visual { min-height:390px; border-radius:28px; } .case-study { padding:75px 0; } .screen-gallery { margin-top:38px; } .screen-card { display:grid; grid-template-columns:120px 1fr; gap:16px; align-items:center; } .screen-card img { aspect-ratio:9 / 16; } .screen-card figcaption { padding:0; } .about { grid-template-columns:1fr; gap:30px; } .systems { grid-template-columns:1fr; } .section-top { align-items:start; flex-direction:column; gap:18px; } footer { gap:10px; flex-direction:column; } }
+    .lightbox { width:min(1100px,calc(100% - 32px)); height:min(92vh,900px); padding:14px; border:1px solid rgba(214,224,255,.25); border-radius:24px; background:#080b18; box-shadow:0 30px 100px rgba(0,0,0,.7); color:var(--ink); }
+    .lightbox::backdrop { background:rgba(0,3,12,.84); backdrop-filter:blur(8px); }
+    .lightbox img { width:100%; height:calc(100% - 38px); display:block; object-fit:contain; border-radius:14px; }
+    .lightbox-top { height:30px; display:flex; justify-content:space-between; align-items:center; padding:0 4px 8px; font:.65rem "DM Mono",monospace; color:var(--muted); letter-spacing:.08em; }
+    .lightbox button { appearance:none; border:0; background:transparent; color:var(--ink); font:1.25rem/1 Manrope,sans-serif; cursor:pointer; padding:3px 7px; border-radius:50%; }
+    .lightbox button:hover { background:rgba(255,255,255,.1); }
+    @media (max-width:760px) { .links { gap:2px; } .links a { padding:7px 9px; } .links a:nth-child(2) { display:none; } .hero { grid-template-columns:1fr; min-height:660px; padding-top:60px; } .radar { display:none; } .projects,.case-grid,.screen-gallery { grid-template-columns:1fr; } .project { min-height:270px; } .case-grid.reverse .work-visual { order:0; } .work-visual { min-height:390px; border-radius:28px; } .case-study { padding:75px 0; } .screen-gallery { margin-top:38px; } .screen-card { display:grid; grid-template-columns:120px 1fr; gap:16px; align-items:center; } .screen-card img { aspect-ratio:9 / 16; } .screen-card.landscape { grid-template-columns:1fr; } .screen-card.landscape img { aspect-ratio:16 / 9; } .screen-card figcaption { padding:0; } .screen-card.landscape figcaption { padding:4px 5px 6px; } .about { grid-template-columns:1fr; gap:30px; } .systems { grid-template-columns:1fr; } .section-top { align-items:start; flex-direction:column; gap:18px; } footer { gap:10px; flex-direction:column; } }
     @media (prefers-reduced-motion:no-preference) { .radar-ring { animation: drift 6s ease-in-out infinite; } @keyframes drift { 50% { transform:translateY(-9px); } } }
   </style>
 </head>
@@ -112,40 +125,102 @@
     </nav>
     <section class="hero" id="top">
       <div>
-        <div class="eyebrow">Independent digital creator</div>
-        <h1>Build beyond<br><span>the orbit.</span></h1>
-        <p class="intro">สวัสดี ผมคือ maythiya นักพัฒนาและนักออกแบบที่เปลี่ยนไอเดียซับซ้อนให้กลายเป็นประสบการณ์ดิจิทัลที่ชัดเจนและใช้งานได้จริง</p>
-        <div class="actions"><a class="button primary" href="#work">Explore selected work <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="button" href="https://github.com/maythiya" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-1-2.6c3.4-.4 7-1.7 7-7.5A5.8 5.8 0 0 0 20.5 4S19.3 3.6 16 5.8a15.5 15.5 0 0 0-8 0C4.7 3.6 3.5 4 3.5 4A5.8 5.8 0 0 0 2 8c0 5.8 3.6 7.1 7 7.5a3.4 3.4 0 0 0-1 2.6V22"/></svg> GitHub</a></div>
+        <div class="eyebrow">Portfolio / Internship</div>
+        <h1>เมย์ธิญา<br><span>แกมนิล</span></h1>
+        <p class="intro">Portfolio ของเมย์ธิญา แกมนิล นักศึกษาชั้นปีที่ 4 สาขาวิทยาการข้อมูลและนวัตกรรมซอฟต์แวร์ มหาวิทยาลัยอุบลราชธานี</p>
+        <div class="actions"><a class="button primary" href="#work">ดูผลงาน <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="button" href="https://github.com/maythiya" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-1-2.6c3.4-.4 7-1.7 7-7.5A5.8 5.8 0 0 0 20.5 4S19.3 3.6 16 5.8a15.5 15.5 0 0 0-8 0C4.7 3.6 3.5 4 3.5 4A5.8 5.8 0 0 0 2 8c0 5.8 3.6 7.1 7 7.5a3.4 3.4 0 0 0-1 2.6V22"/></svg> GitHub</a></div>
       </div>
-      <div class="radar"><div class="portrait"><img src="assets/profile.jpg" alt="Portrait of maythiya" /></div><div class="coordinates">13°45′ N / 100°30′ E<br>EARTH · 2026</div></div>
+      <div class="radar"><div class="portrait"><img src="assets/maythiya-kaemnil.jpg" alt="รูปภาพของเมย์ธิญา แกมนิล" /></div><div class="coordinates">UBON RATCHATHANI UNIVERSITY<br>YEAR 4 · 2026</div></div>
     </section>
     <section id="work">
       <div class="section-top"><div><div class="label">Selected missions / 2024—2026</div><h2>Work from the field.</h2></div><span class="all">02 projects</span></div>
       <div class="projects">
-        <a class="project" href="#plotcraft"><span class="number">01 / DIGITAL EXPERIENCE</span><h3>Plotcraft</h3><p>พื้นที่เล่าเรื่องของไอเดีย ที่เปิดให้ผู้คนสำรวจและเชื่อมโยงรายละเอียดได้อย่างเป็นธรรมชาติ</p><div class="tags"><span class="tag">WEB DESIGN</span><span class="tag">UX</span><span class="tag">STORYTELLING</span></div></a>
-        <a class="project" href="#real-e-gurus"><span class="number">02 / PROPERTY PLATFORM</span><h3>REAL E-GURUS</h3><p>ต้นแบบแพลตฟอร์มค้นหาอสังหาริมทรัพย์ในอุบลฯ ที่จัดการข้อมูลและเส้นทางการตัดสินใจให้ชัดเจนขึ้น</p><div class="tags"><span class="tag">FIGMA</span><span class="tag">UI/UX</span><span class="tag">PROTOTYPE</span></div></a>
+        <a class="project" href="#plotcraft"><span class="number">01 / DIGITAL EXPERIENCE</span><h3>Plotcraft</h3><p>เว็บแอปสำหรับนักเขียน รวมต้นฉบับ ตัวละคร และไทม์ไลน์เรื่องราวไว้ในที่เดียว ไม่ต้องสลับหลายแอป</p><div class="tags"><span class="tag">WEB DESIGN</span><span class="tag">UX</span><span class="tag">STORYTELLING</span></div></a>
+        <a class="project" href="#real-e-gurus"><span class="number">02 / PROPERTY PLATFORM</span><h3>REAL E-GURUS</h3><p>ต้นแบบ UI/UX แพลตฟอร์มอสังหาริมทรัพย์ในอุบลฯ ออกแบบให้คนหาบ้านหรือคอนโดตัดสินใจได้ง่ายและไว</p><div class="tags"><span class="tag">FIGMA</span><span class="tag">UI/UX</span><span class="tag">PROTOTYPE</span></div></a>
       </div>
     </section>
     <section class="case-study" id="plotcraft">
       <div class="case-grid">
-        <div class="work-visual has-image"><img src="assets/plotcraft-cover.jpg" alt="Experimental visual for Plotcraft" /><span class="image-caption">PLOTCRAFT / EXPERIMENTAL VISUAL</span></div>
-        <div class="case-copy"><div class="label">Project 01 / Digital experience</div><h2>Plotcraft</h2><p class="lead">ประสบการณ์ดิจิทัลที่นำการเล่าเรื่องมาเป็นแกนกลาง เพื่อพาผู้ใช้ค่อย ๆ สำรวจไอเดียและรายละเอียดของงานอย่างมีจังหวะ</p><p class="detail">โครงหน้าถูกออกแบบให้ข้อมูลสำคัญนำทางได้ง่าย ขณะเดียวกันยังเหลือพื้นที่ให้ภาพและเนื้อหาได้สร้างบรรยากาศของตัวเอง</p><div class="case-meta"><div><span>Focus</span><span>EXPERIENCE DESIGN</span></div><div><span>Role</span><span>DESIGN · DEVELOPMENT</span></div><div><span>Visuals</span><span>COMING SOON</span></div></div><a class="button" href="#top">Back to orbit <svg viewBox="0 0 24 24"><path d="M5 12h14M11 6l-6 6 6 6"/></svg></a></div>
+        <div class="work-visual has-image"><img src="assets/plotcraft-landing.png" alt="PlotCraft landing page" /><span class="image-caption">LANDING PAGE / CREATIVE WORKSPACE</span></div>
+        <div class="case-copy"><div class="label">Project 01 / Creative workspace</div><h2>Plotcraft</h2><p class="lead">พื้นที่ทำงานสำหรับนักเขียน รวมต้นฉบับ ตัวละคร สถานที่ ฉาก และไทม์ไลน์ไว้ในระบบเดียว จัดโครงเรื่องให้เป็นระเบียบ พร้อมต่อยอดไอเดียได้ทันทีที่นึกออก</p><p class="detail">งานออกแบบครอบคลุมตั้งแต่ Landing Page ที่สื่อสารจุดเด่นของฟีเจอร์ ไปจนถึงหน้า Workspace ที่รวมทุกองค์ประกอบของนิยายไว้ในมุมมองเดียว นักเขียนเห็นภาพรวมได้โดยไม่ต้องไล่เปิดทีละหน้า</p><div class="case-meta"><div><span>Focus</span><span>WRITING WORKFLOW</span></div><div><span>Role</span><span>DESIGN · DEVELOPMENT</span></div><div><span>Platform</span><span>DJANGO WEB APP</span></div></div><div class="case-actions"><a class="button primary" href="https://github.com/maythiya/plotcraft" target="_blank" rel="noreferrer">View on GitHub <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-1-2.6c3.4-.4 7-1.7 7-7.5A5.8 5.8 0 0 0 20.5 4S19.3 3.6 16 5.8a15.5 15.5 0 0 0-8 0C4.7 3.6 3.5 4 3.5 4A5.8 5.8 0 0 0 2 8c0 5.8 3.6 7.1 7 7.5a3.4 3.4 0 0 0-1 2.6V22"/></svg></a><a class="button" href="#top">Back to orbit <svg viewBox="0 0 24 24"><path d="M5 12h14M11 6l-6 6 6 6"/></svg></a></div></div>
+      </div>
+      <div class="screen-gallery" aria-label="PlotCraft key screens">
+        <figure class="screen-card landscape"><img src="assets/plotcraft-landing.png" alt="PlotCraft landing page" /><figcaption><div class="screen-index">01 / LANDING PAGE</div><h3>Build a world that feels alive</h3><p>หน้า Landing Page ที่บอกจุดเด่นของผลิตภัณฑ์และวิธีการทำงานหลักของนักเขียนได้ตั้งแต่แวบแรกที่เห็น</p></figcaption></figure>
+        <figure class="screen-card landscape"><img src="assets/plotcraft-workspace.png" alt="PlotCraft writing workspace overview" /><figcaption><div class="screen-index">02 / WORKSPACE</div><h3>ทุกโลกเรื่องเล่าในมุมมองเดียว</h3><p>Dashboard ที่รวมงานเขียน ค้นหาฉาก และไทม์ไลน์ไว้ด้วยกัน กลับมาเปิดทีไรก็ลุยงานต่อได้ทันทีโดยไม่ต้องไล่หาว่าค้างอยู่ตรงไหน</p></figcaption></figure>
+        <figure class="screen-card landscape"><img src="assets/plotcraft-editor.png" alt="PlotCraft chapter editor" /><figcaption><div class="screen-index">03 / CHAPTER EDITOR</div><h3>พื้นที่เขียนที่พาเรื่องไปต่อ</h3><p>Text Editor แบบลดสิ่งรบกวน วางเครื่องมือที่จำเป็นไว้ใกล้มือ เพื่อให้โฟกัสกับตัวหนังสือได้เต็มที่</p></figcaption></figure>
+        <figure class="screen-card landscape"><img src="assets/plotcraft-timeline.png" alt="PlotCraft visual timeline" /><figcaption><div class="screen-index">04 / VISUAL TIMELINE</div><h3>มองเห็นเหตุและผลของเรื่องราว</h3><p>Visual Timeline ที่เรียงเหตุการณ์ตามลำดับ ช่วยเช็กความต่อเนื่องของเรื่องและตามรอยรายละเอียดที่เชื่อมโยงกันได้ง่ายขึ้น</p></figcaption></figure>
       </div>
     </section>
     <section class="case-study" id="real-e-gurus">
       <div class="case-grid reverse">
         <div class="work-visual has-image real-estate"><img src="assets/real-e-home.png" alt="REAL E-GURUS home page showing property search and listings" /><span class="image-caption">PUBLIC HOME / PROPERTY DISCOVERY</span></div>
-        <div class="case-copy"><div class="label">Project 02 / Property platform</div><h2>REAL E-GURUS</h2><p class="lead">แพลตฟอร์มอสังหาริมทรัพย์สำหรับอุบลราชธานี ที่ให้ทุกคนเริ่มค้นหาบ้านได้ทันที และมีเส้นทางเฉพาะสำหรับสมาชิกกับ developer</p><p class="detail">ขอบเขตงานที่นำเสนอครอบคลุม 3 หน้าหลัก: หน้า Home สำหรับสำรวจทรัพย์สินแบบ public, จุดเข้าใช้งานสำหรับสมาชิก และหน้า Developer สำหรับพาร์ตเนอร์ที่ต้องการโปรโมตโครงการ</p><div class="case-meta"><div><span>Focus</span><span>PROPERTY DISCOVERY</span></div><div><span>Role</span><span>UI/UX DESIGN</span></div><div><span>Prototype</span><span>FIGMA</span></div></div><a class="button primary" href="https://www.figma.com/proto/vWza54Lxar4yYzw0B8jDIk/REAL-E-GURUS?page-id=0%3A1&amp;node-id=1-3&amp;viewport=402%2C468%2C0.15&amp;t=nwwFjQQwXS9OrZLz-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;starting-point-node-id=1%3A3" target="_blank" rel="noreferrer">Open prototype <svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
+        <div class="case-copy"><div class="label">Project 02 / Property platform</div><h2>REAL E-GURUS</h2><p class="lead">ออกแบบ UI/UX แพลตฟอร์มอสังหาริมทรัพย์ในจังหวัดอุบลราชธานี ให้คนหาบ้านหรือคอนโดค้นหา ดูรายละเอียด และติดต่อได้อย่างมั่นใจ ครอบคลุมทั้งฝั่งผู้ซื้อทั่วไป กลุ่ม Developer และผู้ซื้อต่างชาติ</p><p class="detail">งานออกแบบครอบคลุมตั้งแต่ระบบค้นหาบนหน้าแรก หน้ารายละเอียดอสังหาฯ ที่ให้ข้อมูลครบในจุดเดียว ไปจนถึงส่วนสำหรับพาร์ตเนอร์โครงการและคู่มือซื้อบ้านฉบับชาวต่างชาติ</p><div class="case-meta"><div><span>Focus</span><span>PROPERTY DISCOVERY</span></div><div><span>Role</span><span>UI/UX DESIGN</span></div><div><span>Prototype</span><span>FIGMA</span></div></div><a class="button primary" href="https://www.figma.com/proto/vWza54Lxar4yYzw0B8jDIk/REAL-E-GURUS?page-id=0%3A1&amp;node-id=1-3&amp;viewport=402%2C468%2C0.15&amp;t=nwwFjQQwXS9OrZLz-1&amp;scaling=scale-down&amp;content-scaling=fixed&amp;starting-point-node-id=1%3A3" target="_blank" rel="noreferrer">Open prototype <svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
       </div>
       <div class="screen-gallery" aria-label="REAL E-GURUS key screens">
-        <figure class="screen-card"><img src="assets/real-e-home.png" alt="REAL E-GURUS home page" /><figcaption><div class="screen-index">01 / HOME</div><h3>เริ่มค้นหาได้ทันที</h3><p>ผู้ใช้ที่ยังไม่ได้สมัครสมาชิกสามารถเลือกประเภททรัพย์สิน ระบุราคา และดู hot properties, services กับ video tour ได้จากหน้าเดียว</p></figcaption></figure>
-        <figure class="screen-card"><img src="assets/real-e-register.png" alt="REAL E-GURUS registration modal" /><figcaption><div class="screen-index">02 / ACCOUNT ENTRY</div><h3>สมัครหรือเข้าสู่ระบบ</h3><p>จุดเริ่มต้นสำหรับผู้ที่ต้องการบัญชี โดยวางเป็น modal บนหน้าที่กำลังดูอยู่ เพื่อให้กลับไปสำรวจทรัพย์สินต่อได้ง่าย</p></figcaption></figure>
-        <figure class="screen-card"><img src="assets/real-e-developer.png" alt="REAL E-GURUS developer partnership page" /><figcaption><div class="screen-index">03 / DEVELOPER PAGE</div><h3>พื้นที่ของ developer</h3><p>หน้าเฉพาะสำหรับพาร์ตเนอร์ ใช้สื่อสารคุณค่า เครื่องมือสนับสนุน และช่องทางเชื่อมโครงการไปยังผู้ซื้อในวงกว้าง</p></figcaption></figure>
+        <figure class="screen-card"><img src="assets/real-e-home.png" alt="REAL E-GURUS home page" /><figcaption><div class="screen-index">01 / HOME</div><h3>เริ่มค้นหาได้ทันที</h3><p>ค้นหาตามประเภททรัพย์สินและช่วงราคาได้ทันทีโดยไม่ต้องล็อกอิน พร้อมทางลัดไปดู Video Tour และบริการอื่น ๆ ในหน้าเดียวกัน</p></figcaption></figure>
+        <figure class="screen-card"><img src="assets/real-e-property-detail.png" alt="REAL E-GURUS property detail page" /><figcaption><div class="screen-index">02 / PROPERTY DETAIL</div><h3>เปลี่ยนการค้นหาให้เป็นการตัดสินใจ</h3><p>รูปภาพ ราคา รายละเอียดสำคัญ และช่องทางติดต่อ agent ถูกจัดวางในจุดที่มองเห็นง่าย ชั่งใจได้ครบก่อนตัดสินใจติดต่อจริง</p></figcaption></figure>
+        <figure class="screen-card"><img src="assets/real-e-register.png" alt="REAL E-GURUS registration modal" /><figcaption><div class="screen-index">03 / ACCOUNT ENTRY</div><h3>สมัครหรือเข้าสู่ระบบ</h3><p>เข้าสู่ระบบและสมัครสมาชิกผ่าน Modal ที่เปิดขึ้นมาไว ๆ แล้วปิดกลับไปดูรายการอสังหาฯ ต่อได้โดยไม่เสียจังหวะ</p></figcaption></figure>
+        <figure class="screen-card"><img src="assets/real-e-developer.png" alt="REAL E-GURUS developer partnership page" /><figcaption><div class="screen-index">04 / DEVELOPER PAGE</div><h3>พื้นที่สำหรับพาร์ตเนอร์</h3><p>หน้าสำหรับพาร์ตเนอร์ Developer บอกจุดเด่นของเครื่องมือสนับสนุนการขาย พร้อมช่องทางนำโครงการไปเสนอถึงกลุ่มผู้ซื้อ</p></figcaption></figure>
+        <figure class="screen-card"><img src="assets/real-e-foreign-buyer.png" alt="REAL E-GURUS foreign buyer guide" /><figcaption><div class="screen-index">05 / FOREIGN BUYER GUIDE</div><h3>ลดความซับซ้อนของการซื้อข้ามประเทศ</h3><p>รวบรวมเรื่องกฎหมาย สิทธิการถือครอง ภาษี และวีซ่าที่เกี่ยวข้อง มาเล่าเป็นขั้นตอนที่คนต่างชาติอ่านแล้วเข้าใจได้เลย</p></figcaption></figure>
       </div>
     </section>
-    <section class="about" id="about"><div><div class="label">About / transmission</div><h2>Human at the console.</h2></div><div><p class="about-text">ผมสนใจการออกแบบระบบที่ไม่เพียงดูดี แต่ทำให้คนใช้งานรู้สึกว่าเรื่องยากนั้นง่ายขึ้นอย่างเป็นธรรมชาติ</p><div class="systems"><div class="system"><span>Frontend</span><small>HTML · CSS · JS</small></div><div class="system"><span>Backend</span><small>PYTHON · DJANGO</small></div><div class="system"><span>Interface</span><small>FIGMA · UX</small></div><div class="system"><span>Workflow</span><small>GIT · UV · API</small></div></div></div></section>
-    <section class="contact" id="contact"><div class="label">Open channel</div><h2>Let’s make something<br>worth exploring.</h2><p>มีไอเดีย โปรเจกต์ หรือแค่อยากทักทาย ส่งข้อความมาได้เสมอ</p><a class="button primary" href="mailto:hello@example.com">hello@example.com <svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></a></section>
-    <footer><span>© 2026 MAYTHIYA</span><span>DESIGNED FROM EARTH</span></footer>
+    <section class="about" id="about"><div><div class="label">Skills &amp; Interests</div><h2>ออกแบบและพัฒนาเว็บให้ใช้งานได้จริง</h2></div><div><p class="about-text">สนใจการพัฒนาเว็บและการออกแบบ UI/UX โดยให้ความสำคัญกับโครงสร้างที่ชัดเจน ประสบการณ์ใช้งานที่เข้าใจง่าย และการต่อยอดเป็นผลิตภัณฑ์จริง</p><div class="systems"><div class="system"><span>Web Development</span><small>HTML · CSS · JS</small></div><div class="system"><span>Backend Development</span><small>PYTHON · DJANGO</small></div><div class="system"><span>UI/UX Design</span><small>FIGMA · ADOBE XD</small></div><div class="system"><span>Development Tools</span><small>GIT · UV · API</small></div></div></div></section>
+    <section class="contact" id="contact"><div class="label">Contact</div><h2>Let’s connect.</h2><p>ยินดีพูดคุยเกี่ยวกับโอกาสฝึกงานและงานที่เกี่ยวข้องกับ Web Development หรือ UI/UX Design</p><div class="contact-links"><button class="button primary" id="copy-email" type="button" data-email="maythiya.keamnil@gmail.com" aria-describedby="copy-feedback">maythiya.keamnil@gmail.com <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button><a class="button" href="tel:+66838283609"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .8 2.9a2 2 0 0 1-.5 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.4 1.9.7 2.9.8a2 2 0 0 1 1.6 1.9Z"/></svg> 083-828-3609</a><a class="button" href="https://github.com/maythiya" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.9a3.4 3.4 0 0 0-1-2.6c3.4-.4 7-1.7 7-7.5A5.8 5.8 0 0 0 20.5 4S19.3 3.6 16 5.8a15.5 15.5 0 0 0-8 0C4.7 3.6 3.5 4 3.5 4A5.8 5.8 0 0 0 2 8c0 5.8 3.6 7.1 7 7.5a3.4 3.4 0 0 0-1 2.6V22"/></svg> GitHub</a></div><p class="copy-feedback" id="copy-feedback" aria-live="polite"></p></section>
+    <footer><span>© 2026 MAYTHIYA KAEMNIL</span><span>PORTFOLIO FOR INTERNSHIP</span></footer>
   </main>
+  <dialog class="lightbox" id="image-lightbox" aria-label="Image preview">
+    <div class="lightbox-top"><span id="lightbox-caption">IMAGE PREVIEW</span><button type="button" id="lightbox-close" aria-label="Close image preview">×</button></div>
+    <img id="lightbox-image" src="" alt="" />
+  </dialog>
+  <script>
+    (() => {
+      const dialog = document.getElementById('image-lightbox');
+      const preview = document.getElementById('lightbox-image');
+      const caption = document.getElementById('lightbox-caption');
+      const close = document.getElementById('lightbox-close');
+      document.querySelectorAll('.work-visual.has-image img, .screen-card img').forEach((image) => {
+        image.tabIndex = 0;
+        image.setAttribute('role', 'button');
+        image.setAttribute('aria-label', `View full image: ${image.alt}`);
+        const open = () => {
+          preview.src = image.src;
+          preview.alt = image.alt;
+          caption.textContent = image.alt.toUpperCase();
+          dialog.showModal();
+        };
+        image.addEventListener('click', open);
+        image.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); open(); }
+        });
+      });
+      close.addEventListener('click', () => dialog.close());
+      dialog.addEventListener('click', (event) => { if (event.target === dialog) dialog.close(); });
+
+      const copyEmail = document.getElementById('copy-email');
+      const copyFeedback = document.getElementById('copy-feedback');
+      const fallbackCopy = (text) => {
+        const field = document.createElement('textarea');
+        field.value = text;
+        field.setAttribute('readonly', '');
+        field.style.position = 'fixed';
+        field.style.opacity = '0';
+        document.body.appendChild(field);
+        field.select();
+        const copied = document.execCommand('copy');
+        field.remove();
+        if (!copied) throw new Error('Copy command was unavailable');
+      };
+      copyEmail.addEventListener('click', async () => {
+        const email = copyEmail.dataset.email;
+        try {
+          if (navigator.clipboard && window.isSecureContext) await navigator.clipboard.writeText(email);
+          else fallbackCopy(email);
+          copyFeedback.textContent = 'คัดลอกอีเมลแล้ว';
+        } catch (error) {
+          copyFeedback.textContent = 'ไม่สามารถคัดลอกได้ กรุณาเลือกคัดลอกอีเมลด้วยตนเอง';
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
